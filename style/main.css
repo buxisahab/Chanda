@@ -2,18 +2,13 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  padding: 0;
 }
 
 .song {
-  display: none; /* better than visibility hidden */
+  visibility: hidden;
 }
 
 .container {
@@ -51,7 +46,6 @@ body {
   border-radius: 5px;
   margin: 0 auto;
   padding: 10px;
-  padding-bottom: 3rem; /* prevent fake-btn overlap */
   position: relative;
   width: 600px;
 }
@@ -73,12 +67,6 @@ body {
   padding: .5rem 1rem;
   position: absolute;
   right: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.text-box .fake-btn:hover {
-  transform: scale(1.05);
 }
 
 .five p {
@@ -98,15 +86,14 @@ body {
   font-size: 4rem;
 }
 
-.idea-5 span,
-.idea-6 span,
-.wish-hbd span {
+.idea-5 span, .idea-6 span, .wish-hbd span {
   display: inline-block;
 }
 
-.idea-6 span {
+.idea-6 span{
   font-size: 15rem;
 }
+
 
 .six {
   position: relative;
@@ -118,11 +105,13 @@ body {
   display: inline-block;
   height: 350px;
   max-width: 100%;
+  /* height: auto; */
 }
 
 .six .hat {
   left: 41.5%;
   position: absolute;
+  /* transform: scale(0.1); */
   top: -35%;
   width: 80px;
 }
@@ -130,8 +119,6 @@ body {
 .baloons img {
   display: inline-block;
   position: absolute;
-  max-width: 60px;
-  height: auto;
 }
 
 .baloons img:nth-child(even) {
@@ -146,8 +133,7 @@ body {
   left: 30%;
 }
 
-.seven,
-.eight {
+.seven, .eight {
   height: 100vh;
   position: fixed;
   top: 0;
@@ -221,7 +207,6 @@ body {
   font-size: 3em;
   margin: 0;
   text-transform: uppercase;
-  text-shadow: 2px 2px 8px rgba(255, 105, 180, 0.8);
 }
 
 .wish h5 {
@@ -266,16 +251,8 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-  body {
-    padding: 10px;
-  }
-
   .container {
     width: 90%;
-  }
-
-  .container > div {
-    top: 10vh;
   }
 
   .four .text-box {
@@ -296,6 +273,7 @@ body {
   }
 
   .six .hat {
+    /* top: -20px; */
     width: 50px;
   }
 
@@ -310,9 +288,5 @@ body {
   .nine p {
     font-size: 1.5rem;
     font-weight: lighter;
-  }
-
-  .baloons img:nth-child(n+15) {
-    display: none;
   }
 }
